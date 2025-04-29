@@ -18,6 +18,7 @@
             background-color: hsl(120, 100%, 7.16%);
             color: hsl(120, 80%, 94%);
             cursor: url('corksor-w.png'), auto;
+            font-family: system-ui, -apple-system, sans-serif;
         }
 
         .border-left, .border-right {
@@ -158,7 +159,7 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            /* justify-content: center; */
             align-items: center;
         }
 
@@ -207,14 +208,63 @@
             gap: 12px;
             /* align-self: flex-start; */
             font-size: 1.2rem;
-            padding-left: 1rem;
-            padding-bottom: 1rem;
+            /* padding-left: 1rem; */
+            /* padding-bottom: 1rem; */
+            padding-top: 1rem;
         }
 
         .medals p {
             margin: 0;
             text-align: left;
             align-self: flex-start;
+        }
+
+        .medal-final {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            /* gap: 12px; */
+            column-gap: 12px;
+            margin-bottom: 0.5rem;
+        }
+
+        .medal-final div {
+            white-space: nowrap;
+        }
+
+
+        @media (max-width: 500px) {
+            .medal-final {
+                flex-direction: column;
+            }
+        }
+
+        .medal-art {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            /* gap: 12px; */
+            column-gap: 12px;
+            margin-bottom: 0.5rem;
+        }
+
+        .medal-art-medal {
+            white-space: nowrap;
+        }
+
+        @media (max-width: 500px) {
+            .medal-art {
+                flex-direction: column;
+            }
+        }
+
+
+        .previous-medals {
+            font-size: 0.8rem;
+            color: hsla(120, 81%, 94%, 0.364);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
         }
 
     </style>
@@ -253,30 +303,62 @@
                     <!-- <h2>Camogie <span class="medal" id="c1">🥇</span><span class="medal" id="c2">🥇</span><span class="medal" id="c3">🥇</span></h2> -->
                     <h2>Camogie</h2>
                     <div class="medals">
-                        <p>
-                            <span class="medal" id="c1">🥇</span> <strong>2064</strong> <span class="flag">🇦🇺</span><span class="mono"> AUS 3-13 3-11 IRL </span><span class="flag">🇮🇪</span>
-                        </p>
-                        <p>
-                            <span class="medal" id="c2">🥇</span> <strong>2060</strong> <span class="flag">🇦🇺</span><span class="mono"> AUS 3-13 3-11 IRL </span><span class="flag">🇮🇪</span>
-                        </p>
-                        <p>
-                            <span class="medal" id="c3">🥇</span> <strong>2056</strong> <span class="flag">🇺🇸</span><span class="mono"> USA 3-13 3-11 IRL </span><span class="flag">🇮🇪</span>
-                        </p>
+                        <em class="previous-medals">previous medals</em>
+                        <div class="medal-final">
+                            <div>
+                            <span class="medal" id="c1">🥇</span> <strong>2064</strong>
+                            </div>
+                            <div>
+                            <span class="flag">🇮🇪</span><span class="mono"> IRL 3-11 · 3-13 AUS </span><span class="flag">🇦🇺</span>
+                            </div>
+                        </div>
+                        <div class="medal-final">
+                            <div>
+                            <span class="medal" id="c2">🥇</span> <strong>2060</strong>
+                            </div>
+                            <div>
+                            <span class="flag">🇮🇪</span><span class="mono"> IRL 3-11 · 3-13 AUS </span><span class="flag">🇦🇺</span>
+                            </div>
+                        </div>
+                        <div class="medal-final">
+                            <div>
+                            <span class="medal" id="c3">🥇</span> <strong>2056</strong>
+                            </div>
+                            <div>
+                            <span class="flag">🇮🇪</span><span class="mono"> IRL 3-11 · 3-13 USA </span><span class="flag">🇺🇸</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="sport">
                     <!-- <h2>Hurling <span class="medal" id="h1">🥇</span><span class="medal" id="h2">🥇</span><span class="medal" id="h3">🥈</span></h2> -->
                     <h2>Hurling</h2>
                     <div class="medals">
-                        <p>
-                            <span class="medal" id="h1">🥈</span> <strong>2064</strong> <span class="flag">🇯🇵</span><span class="mono"> JPN 3-13 3-11 IRL </span><span class="flag">🇮🇪</span>
-                        </p>
-                        <p>
-                            <span class="medal" id="h2">🥇</span> <strong>2060</strong> <span class="flag">🇦🇷</span><span class="mono"> ARG 3-13 3-11 IRL </span><span class="flag">🇮🇪</span>
-                        </p>
-                        <p>
-                            <span class="medal" id="h3">🥇</span> <strong>2056</strong> <span class="flag">🇦🇺</span><span class="mono"> AUS 3-13 3-11 IRL </span><span class="flag">🇮🇪</span>
-                        </p>
+                        <em class="previous-medals">previous medals</em>
+                        <div class="medal-final">
+                            <div>
+                            <span class="medal" id="h1">🥈</span> <strong>2064</strong>
+                            </div>
+                            <div>
+                            <span class="flag">🇯🇵</span><span class="mono"> JPN 3-13 · 3-11 IRL </span><span class="flag">🇮🇪</span>
+                            </div>
+                        </div>
+                        <div class="medal-final">
+                            <div>
+                            <span class="medal" id="h2">🥇</span> <strong>2060</strong>
+                            </div>
+                            <div>
+                            <span class="flag">🇮🇪</span><span class="mono"> IRL 3-11 · 3-13 ARG </span><span class="flag">🇦🇷</span>
+                            </div>
+                        </div>
+                        <div class="medal-final">
+                            <div>
+                            <span class="medal" id="h3">🥇</span> <strong>2056</strong>
+                            </div>
+                            <div>
+                            <span class="flag">🇮🇪</span><span class="mono"> IRL 3-11 · 3-13 AUS </span><span class="flag">🇦🇺</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -285,13 +367,31 @@
                 <div class="sport">
                     <!-- <h2>Painting <span class="medal">🥈</span><span class="medal">🥉</span></h2> -->
                     <h2>Painting</h2>
+                    
                     <div class="medals">
-                        <p>
-                            <span class="medal" id="p1">🥈</span> <strong>1924</strong> <em>"The Liffey Swim"</em> Jack B. Yeats 
-                        </p>
-                        <p>
-                            <span class="medal" id="p2">🥉</span> <strong>1948</strong> <em>"Meath Hunt Point-to-Point Races"</em> Letitia Marion Hamilton 
-                        </p>
+                        <em class="previous-medals">previous medals</em>
+                        <div class="medal-art">
+                            <div class="medal-art-medal">
+                            <span class="medal" id="p1">🥈</span> <strong>1924</strong>
+                            </div>
+                            <div class="medal-art-title">
+                            <em>"The Liffey Swim"</em>
+                            </div>
+                            <div class="medal-art-artist">
+                            Jack B. Yeats 
+                            </div>
+                        </div>
+                        <div class="medal-art">
+                            <div class="medal-art-medal">
+                            <span class="medal" id="p2">🥉</span> <strong>1948</strong>
+                            </div>
+                            <div class="medal-art-title">   
+                            <em>"Meath Hunt Point-to-Point Races"</em>
+                            </div>
+                            <div class="medal-art-artist">
+                            Letitia Marion Hamilton 
+                            </div>
+                        </div>
                     </div>
 <!--                     <div>
                     <img src="Liffey Swim Yeats.jpg" width="300px">
@@ -301,9 +401,18 @@
                     <!-- <h2>Literature <span class="medal">🥉</span></h2> -->
                     <h2>Literature</h2>
                     <div class="medals">
-                        <p>
-                            <span class="medal" id="l1">🥉</span> <strong>1924</strong> <em>"Tailteann Ode"</em> Oliver St. John Gogarty
-                        </p>
+                        <em class="previous-medals">previous medals</em>
+                        <div class="medal-art">   
+                            <div class="medal-art-medal">
+                            <span class="medal" id="l1">🥉</span> <strong>1924</strong>
+                            </div>
+                            <div class="medal-art-title">
+                            <em>"Tailteann Ode"</em>
+                            </div>
+                            <div class="medal-art-artist">
+                            Oliver St. John Gogarty
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
