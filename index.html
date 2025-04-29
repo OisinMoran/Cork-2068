@@ -103,6 +103,10 @@
             max-width: 600px;
         }
 
+        p.getting-to-games {
+            text-align: left;
+        }
+
         .subtitle {
             font-family: system-ui, -apple-system, sans-serif;
             text-align: center;
@@ -113,6 +117,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
 
         .container2 {
@@ -177,6 +182,28 @@
         
         .medal {
             cursor: pointer;
+            font-size: 1.4em;
+        }
+
+        .flag {
+            font-size: 1.4em;
+        }
+
+        .medals {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            align-self: flex-start;
+            font-size: 1.2rem;
+            padding-left: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .medals p {
+            margin: 0;
+            text-align: left;
+            align-self: flex-start;
         }
 
     </style>
@@ -189,6 +216,9 @@
         <!-- <div class="subtitle"><em>The XLIV<sup>TH</sup> OLYMPIAD</em></div> -->
         <div class="container">
             <p>Coinciding with the 25<sup>th</sup> anniversary of a unified Ireland, celebrating two decades of being the wealthiest country per capita, and with guaranteed sunshine—this is sure to be a sight to behold.</p>
+            <p>The Olympic torch will be lit by Greco-Hibernian, <em>Proinsias Thehedofia</em>.
+               His father from Athens, and mother from Fermanagh—neither hurling strongholds—he's got a lineage back to the ancient games and will be representing Ireland again in boxing, one of the original Olympic sports.
+            </p>
         </div>
 
         <div class="container2">
@@ -198,7 +228,7 @@
                     <h2>Road Ball</h2>
                 </div>
                 <div class="sport">
-                    <h2>Hand ball</h2>
+                    <h2>Gaelic Handball</h2>
                 </div>
             </div>
             <div class="container3">
@@ -209,22 +239,61 @@
             <div class="separator">returning for the 4th summer olympics in a row</div>
             <div class="container3">
                 <div class="sport">
-                    <h2>Camogie <span class="medal" id="c1">🥇</span><span class="medal" id="c2">🥇</span><span class="medal" id="c3">🥇</span></h2>
+                    <!-- <h2>Camogie <span class="medal" id="c1">🥇</span><span class="medal" id="c2">🥇</span><span class="medal" id="c3">🥇</span></h2> -->
+                    <h2>Camogie</h2>
+                    <div class="medals">
+                        <p>
+                            <span class="medal" id="c1">🥇</span> <strong>2064</strong> <span class="flag">🇦🇺</span><span class="mono"> AUS 3-13 3-11 IRL </span><span class="flag">🇮🇪</span>
+                        </p>
+                        <p>
+                            <span class="medal" id="c2">🥇</span> <strong>2060</strong> <span class="flag">🇦🇺</span><span class="mono"> AUS 3-13 3-11 IRL </span><span class="flag">🇮🇪</span>
+                        </p>
+                        <p>
+                            <span class="medal" id="c3">🥇</span> <strong>2056</strong> <span class="flag">🇺🇸</span><span class="mono"> USA 3-13 3-11 IRL </span><span class="flag">🇮🇪</span>
+                        </p>
+                    </div>
                 </div>
                 <div class="sport">
-                    <h2>Hurling <span class="medal" id="h1">🥇</span><span class="medal" id="h2">🥇</span><span class="medal" id="h3">🥈</span></h2>
+                    <!-- <h2>Hurling <span class="medal" id="h1">🥇</span><span class="medal" id="h2">🥇</span><span class="medal" id="h3">🥈</span></h2> -->
+                    <h2>Hurling</h2>
+                    <div class="medals">
+                        <p>
+                            <span class="medal" id="h1">🥈</span> <strong>2064</strong> <span class="flag">🇯🇵</span><span class="mono"> JPN 3-13 3-11 IRL </span><span class="flag">🇮🇪</span>
+                        </p>
+                        <p>
+                            <span class="medal" id="h2">🥇</span> <strong>2060</strong> <span class="flag">🇦🇷</span><span class="mono"> ARG 3-13 3-11 IRL </span><span class="flag">🇮🇪</span>
+                        </p>
+                        <p>
+                            <span class="medal" id="h3">🥇</span> <strong>2056</strong> <span class="flag">🇦🇺</span><span class="mono"> AUS 3-13 3-11 IRL </span><span class="flag">🇮🇪</span>
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="separator">The return of Artistic Events last awarded in 1948</div>
             <div class="container3">
                 <div class="sport">
-                    <h2>Painting <span class="medal">🥈</span><span class="medal">🥉</span></h2>
+                    <!-- <h2>Painting <span class="medal">🥈</span><span class="medal">🥉</span></h2> -->
+                    <h2>Painting</h2>
+                    <div class="medals">
+                        <p>
+                            <span class="medal" id="p1">🥈</span> <strong>1924</strong> <em>“The Liffey Swim”</em> Jack B. Yeats 
+                        </p>
+                        <p>
+                            <span class="medal" id="p2">🥉</span> <strong>1948</strong> <em>“Meath Hunt Point-to-Point Races”</em> Letitia Marion Hamilton 
+                        </p>
+                    </div>
 <!--                     <div>
                     <img src="Liffey Swim Yeats.jpg" width="300px">
                     </div> -->
                 </div>
                 <div class="sport">
-                    <h2>Literature <span class="medal">🥉</span></h2>
+                    <!-- <h2>Literature <span class="medal">🥉</span></h2> -->
+                    <h2>Literature</h2>
+                    <div class="medals">
+                        <p>
+                            <span class="medal" id="l1">🥉</span> <strong>1924</strong> <em>“Tailteann Ode”</em> Oliver St. John Gogarty
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="container3">
@@ -253,6 +322,15 @@
                     <h2>T-Shirt</h2>
                 </div>
             </div>
+
+            <div class="separator">Getting to the Games</div>
+            <div class="container">
+                <p class="getting-to-games">With hourly landings at <strong>Donegal space port</strong>, you can then take a <strong>silent autonomous flying car</strong> down the scenic west coast, directly to your apartment room.</p>
+                <p class="getting-to-games">There are also plenty of <strong>supersonic flights</strong> with similar flying car services from any of Ireland's 53 airports.</p>
+                <p class="getting-to-games">Cork's new <strong>hydrofoil</strong> port is also a great option for anyone coming from places like the Extended Sovereign Azores.</p>
+            </div>
+
+
 
         </div>
     </div>
