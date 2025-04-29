@@ -273,6 +273,86 @@
             font-size: 0.9rem;
         }
 
+        .merch {
+            border-radius: 4px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: underline;
+            color: hsl(120, 80%, 94%);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            max-width: 80%;
+            max-height: 80vh;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: modal-in 0.3s ease-out;
+        }
+
+        .modal-content img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            z-index: 1001;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1;
+        }
+
+        .artwork-clickable {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .artwork-clickable:hover {
+            color: #9ef5a3;
+        }
+
+        @keyframes modal-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -284,7 +364,7 @@
         <div class="container">
             <p>Coinciding with the 25<sup>th</sup> anniversary of a unified Ireland, celebrating two decades of being the wealthiest country per capita, and with guaranteed sunshine—this is sure to be a sight to behold.</p>
             <p>The Olympic torch will be lit by Greco-Hibernian, <em>Proinsias Thehedofia</em>.
-               His father from Athens, and mother from Fermanagh—neither hurling strongholds—he's got a lineage back to the ancient games and will be representing Ireland again in boxing, one of the original Olympic sports.
+               His father from Athens, and mother from Fermanagh—neither hurling strongholds—he's got a lineage tracing back to the ancient games and will be representing Ireland again in boxing, one of the original Olympic sports.
             </p>
         </div>
 
@@ -388,10 +468,10 @@
                             </div>
                         </div>
                         <div class="medal-art">
-                            <div class="medal-art-medal">
+                            <div class="medal-art-medal artwork-clickable" id="liffeySwimMedal">
                             <span class="medal" id="p1">🥈</span> <strong>1924</strong>
                             </div>
-                            <div class="medal-art-title">
+                            <div class="medal-art-title artwork-clickable" id="liffeySwimEntry">
                             <em>"The Liffey Swim"</em>
                             </div>
                             <div class="medal-art-artist">
@@ -441,12 +521,15 @@
             <div class="container3">
                 <div class="sport">
                     <h2>GAA Shorts</h2>
+                    <a href="https://besmirch.clothing/products/cork-2068-gaa-shorts"><img src="shorts.jpg" width="100%" class="merch"></a>
                 </div>
                 <div class="sport">
                     <h2>Cap</h2>
+                    <a href="https://besmirch.clothing/products/cork-2068-cap"><img src="cap.jpg" width="100%" class="merch"></a>
                 </div>
                 <div class="sport">
                     <h2>T-Shirt</h2>
+                    <a href="https://besmirch.clothing/products/cork-2068-t-shirt"><img src="tshirt.jpg" width="100%" class="merch"></a>
                 </div>
             </div>
 
@@ -457,10 +540,64 @@
                 <p class="getting-to-games">Cork's new <strong>hydrofoil</strong> port is also a great option for anyone coming from places like the Extended Sovereign Azores.</p>
             </div>
 
+            <div class="separator">Keep up to date with Cork 2068</div>
+            <div class="container">
+                <p>To hear about the latest developments with the XLIV<sup>th</sup> Olympic Games, follow our official merch collaborator, Besmirch Clothing, on Instagram <a href="https://www.instagram.com/besmirch_clothing/">@besmirch_clothing</a>.</p>
+            </div>
 
 
         </div>
     </div>
     <div class="border-right mint"></div>
+
+    <!-- Modal for Liffey Swim -->
+    <div id="liffeySwimModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <img src="Liffey Swim Yeats.jpg" alt="The Liffey Swim by Jack B. Yeats">
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('liffeySwimModal');
+        const liffeySwimEntry = document.getElementById('liffeySwimEntry');
+        const liffeySwimMedal = document.getElementById('liffeySwimMedal');
+        const closeBtn = document.querySelector('.modal-close');
+
+        // Open modal when clicking on the entry
+        liffeySwimEntry.addEventListener('click', function() {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+
+        // Open modal when clicking on the medal
+        liffeySwimMedal.addEventListener('click', function() {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+
+        // Close modal when clicking the X
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        });
+
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close on ESC key
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'flex') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 </body>
 </html>
