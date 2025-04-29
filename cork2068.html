@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cork 2068</title>
+    <link href="https://fonts.cdnfonts.com/css/cat-walzhari" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            background-color: hsl(120, 100%, 7.16%);
+            color: hsl(120, 80%, 94%);
+            cursor: url('corksor-w.png'), auto;
+        }
+
+        .border-left, .border-right {
+            width: 30px;
+            flex-shrink: 0;
+            background-repeat: repeat-y;
+            background-image: url('cork_olympic_games_ogham.svg');
+            margin: 0;
+            padding: 0 8px;
+        }
+
+        .green {
+            filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(65%) contrast(119%);
+        }
+
+        .black {
+            filter: brightness(0%) saturate(100%);
+        }
+
+        .white {
+            filter: brightness(0%) saturate(100%) invert(100%);
+        }
+
+        .mint {
+            filter: invert(97%) sepia(19%) saturate(236%) hue-rotate(66deg) brightness(103%) contrast(92%);
+        }
+
+        @keyframes scrollUp {
+            from {
+                background-position: center 0;
+            }
+            to {
+                background-position: center -941px;
+            }
+        }
+
+        @keyframes scrollDown {
+            from {
+                background-position: center -941px;
+            }
+            to {
+                background-position: center 0;
+            }
+        }
+
+        .border-left {
+            animation: scrollUp 30s linear infinite;
+        }
+
+        .border-right {
+            animation: scrollDown 30s linear infinite;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'CAT Walzhari', sans-serif;
+            font-weight: 100;
+            margin-bottom: 0rem;
+            font-size: 5rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'CAT Walzhari', sans-serif;
+            font-weight: 100;
+            margin-bottom: 0rem;
+            margin-top: 0rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        p {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .subtitle {
+            font-family: system-ui, -apple-system, sans-serif;
+            text-align: center;
+            font-size: 1.6rem;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+            gap: 12px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container3 {
+            display: flex;
+            flex-direction: row;
+            justify-content: stretch;
+            align-items: stretch;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .sport {
+            border: 1px solid hsl(120, 80%, 94%);
+            border-radius: 8px;
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            font-family: system-ui, -apple-system, sans-serif;
+            color: hsl(120, 80%, 94%);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
+        }
+
+        .separator::before,
+        .separator::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            margin: 0 1rem;
+        }
+
+        .separator::before {
+            background: linear-gradient(to left, hsl(120, 80%, 94%), transparent);
+        }
+
+        .separator::after {
+            background: linear-gradient(to right, hsl(120, 80%, 94%), transparent);
+        }
+        
+        .medal {
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="border-left mint"></div>
+    <div class="content">
+        <img src="logo_mint.svg"></img>
+        <!-- <h1>Cork 2068</h1> -->
+        <!-- <div class="subtitle"><em>The XLIV<sup>TH</sup> OLYMPIAD</em></div> -->
+        <div class="container">
+            <p>Coinciding with the 25<sup>th</sup> anniversary of a unified Ireland, celebrating two decades of being the wealthiest country per capita, and with guaranteed sunshine—this is sure to be a sight to behold.</p>
+        </div>
+
+        <div class="container2">
+            <div class="separator">Making their Olympic debut</div>
+            <div class="container3">
+                <div class="sport">
+                    <h2>Road Ball</h2>
+                </div>
+                <div class="sport">
+                    <h2>Hand ball</h2>
+                </div>
+            </div>
+            <div class="container3">
+                <div class="sport">
+                    <h2>Gaelic Football</h2>
+                </div>
+            </div>
+            <div class="separator">returning for the 4th summer olympics in a row</div>
+            <div class="container3">
+                <div class="sport">
+                    <h2>Camogie <span class="medal" id="c1">🥇</span><span class="medal" id="c2">🥇</span><span class="medal" id="c3">🥇</span></h2>
+                </div>
+                <div class="sport">
+                    <h2>Hurling <span class="medal" id="h1">🥇</span><span class="medal" id="h2">🥇</span><span class="medal" id="h3">🥈</span></h2>
+                </div>
+            </div>
+            <div class="separator">The return of Artistic Events last awarded in 1948</div>
+            <div class="container3">
+                <div class="sport">
+                    <h2>Painting <span class="medal">🥈</span><span class="medal">🥉</span></h2>
+<!--                     <div>
+                    <img src="Liffey Swim Yeats.jpg" width="300px">
+                    </div> -->
+                </div>
+                <div class="sport">
+                    <h2>Literature <span class="medal">🥉</span></h2>
+                </div>
+            </div>
+            <div class="container3">
+                <div class="sport">
+                    <h2>Music</h2>
+                </div>
+                <div class="sport">
+                    <h2>Architecture</h2>
+                </div>
+            </div>
+            <div class="container3">
+                <div class="sport">
+                    <h2>Sculpture</h2>
+                </div>
+            </div>
+
+            <div class="separator">Official Merchandise</div>
+            <div class="container3">
+                <div class="sport">
+                    <h2>GAA Shorts</h2>
+                </div>
+                <div class="sport">
+                    <h2>Cap</h2>
+                </div>
+                <div class="sport">
+                    <h2>T-Shirt</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="border-right mint"></div>
+</body>
+</html>
