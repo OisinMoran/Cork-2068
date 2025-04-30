@@ -10,6 +10,22 @@
     <link rel="manifest" href="site.webmanifest">
     <link href="https://fonts.cdnfonts.com/css/cat-walzhari" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Playfair';
+            src: url('Playfair-VariableFont.woff2') format('woff2-variations');
+            font-weight: 300 900;
+            font-style: normal;
+            font-display: swap;
+         }
+
+        @font-face {
+            font-family: 'Playfair';
+            src: url('Playfair-Italic-VariableFont.woff2') format('woff2-variations');
+            font-weight: 300 900;
+            font-style: italic;
+            font-display: swap;
+        }
+
         body {
             margin: 0;
             padding: 0 12px;
@@ -323,6 +339,85 @@
             height: auto;
         }
 
+        .modal-text-content {
+            max-width: 80%;
+            max-height: 80vh;
+            width: 800px;
+            background-color: rgba(0, 20, 0, 0.95);
+            color: hsl(120, 80%, 94%);
+            border-radius: 32px;
+            overflow-y: auto;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            border: 1px solid hsl(120, 80%, 94%);
+            animation: modal-in 0.3s ease-out;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: left;
+            
+            /* Hide scrollbar but keep scrollable functionality */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .modal-text-content::-webkit-scrollbar {
+            display: none;
+        }
+
+        .modal-text-content h3 {
+            font-family: 'CAT Walzhari', sans-serif;
+            text-align: center;
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-weight: normal;
+        }
+
+        .poem-title {
+            margin-bottom: 0 !important;
+        }
+
+        .poem {
+            margin: 0 auto;
+            max-width: 600px;
+            font-family: 'Playfair', serif !important;
+        }
+
+        .poem p {
+            font-family: 'Playfair', serif !important;
+            font-size: 1.4rem;
+            text-align: left;
+            margin: 1lh 0;
+            /* margin-bottom: 1.5rem; */
+            /* font-style: italic; */
+        }
+
+        .poem-subtitle {
+            font-style: italic;
+            /* font-size: 0.9rem; */
+            margin-top: 0 !important;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .poem-heading {
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 0.07em;
+            margin-bottom: -1lh !important;
+            /* font-weight: bold; */
+            
+        }
+
+        .poem-attribution {
+            /* font-size: 0.8rem; */
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
         .modal-close {
             position: absolute;
             top: 15px;
@@ -372,7 +467,7 @@
         <div class="container">
             <p>Coinciding with the 25<sup>th</sup> anniversary of a unified Ireland, celebrating two decades of being the wealthiest country per capita, and with guaranteed sunshine—this is sure to be a sight to behold.</p>
             <p>The Olympic torch will be lit by Greco-Hibernian, <em>Proinsias Thehedofia</em>.
-               His father from Athens, and mother from Fermanagh—neither hurling strongholds—he’s got a lineage tracing back to the ancient games and will be vying for another Irish gold in the boxing, one of the oldest Olympic sports.
+               His father from Athens, and mother from Fermanagh—neither hurling strongholds—he's got a lineage tracing back to the ancient games and will be vying for another Irish gold in the boxing, one of the oldest Olympic sports.
             </p>
         </div>
 
@@ -495,7 +590,7 @@
                     <h2>Literature</h2>
                     <div class="medals">
                         <em class="previous-medals">previous medals</em>
-                        <div class="medal-art">   
+                        <div class="medal-art artwork-entry" id="tailteannOdeEntry">   
                             <div class="medal-art-medal">
                             <span class="medal" id="l1">🥉</span> <strong>1924</strong>
                             </div>
@@ -573,12 +668,272 @@
         </div>
     </div>
 
+    <!-- Modal for Tailteann Ode -->
+    <div id="tailteannOdeModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-text-content">
+            <h3 class="poem-title">Tailteann Ode</h3>
+            <div class="poem playfair-cork">
+                <p class="poem-subtitle">Written at the request of the Irish Government on the revival of the Tailltean (Irish Olympic) Games.</p>
+                
+                <p>
+                    Empyrean is the source <br>
+                    Of indomitable will. <br>
+                    God the runner to his course <br>
+                    Holds, and urges on until <br>
+                    Lips and face of blood are drained, <br>
+                    And fainting limbs are numb: <br>
+                    Till the heart, by God sustained, <br>
+                    Bravely to the end is come. </p>
+                
+                <p>
+                    By the Conflict is revealed <br>
+                    In a runner what is best; <br>
+                    By the struggle in the field, <br>
+                    By the speed which is the test, <br>
+                    By the speed that wears him down <br>
+                    Till the spirit alone can bear <br>
+                    Limbs that stagger for the crown <br>
+                    And the thunder in his ear. </p>
+                
+                <p>
+                    Where are they who ran before <br>
+                    Under Tara’s wide-eyed steep; <br>
+                    And the chariots that tore <br>
+                    Parallel the ridges deep? <br>
+                    Where are noble man and horse? <br>
+                    Ah, they both have lost the rein; <br>
+                    They have circled in a course <br>
+                    Tara shall not see again! </p>
+                
+                <p>
+                    Herald: Silence now and hear the King! </p>
+                
+                
+                <p class="poem-heading">KING LEARY</p>
+                
+                <p>
+                    We are, as our fathers were, <br>
+                    Lovers of the swift and strong, <br>
+                    Lovers of the open air, <br>
+                    Lovers of the horse and song <br>
+                    And the glories of the voice <br>
+                    In the deeds to be retold. <br>
+                    Therefore let us now rejoice <br>
+                    As the kings rejoiced of old. </p>
+                
+                <p>
+                    Room enough for Peace is here <br>
+                    On the green and shaven swards, <br>
+                    For the pitching charioteer, <br>
+                    For the grave contending Bards, <br>
+                    For the young men in the race, <br>
+                    For the stately sports of dames, <br>
+                    For the maidens fair of face. <br>
+                    We have opened Tailltean Games. </p>
+                
+                <p>
+                    Herald: The king of the South. Be listening! </p>
+                
+                <p class="poem-heading">THE KING OF THE SOUTH</p>
+                
+                <p>
+                    King, we have come to this noble place <br>
+                    From the mountainous south of the narrow bays <br>
+                    Where, isled in grass, the short oaks grow, <br>
+                    Their low leaves wet by the tide below, <br>
+                    Where the golden sea-weed is lodged and low <br>
+                    Till the tide returns as smooth and bland <br>
+                    As the tremulous path to Fairyland; <br>
+                    And the moon at night renews the track <br>
+                    With a ladder of light on the waters black: <br>
+                    A misty land that is poor in flocks, <br>
+                    Of tender valleys and heartless rocks, <br>
+                    Of stout lowlanders and, wild without fear, <br>
+                    The deep-breathed runner, the mountaineer. <br>
+                    King, we will try on your plain of Meath <br>
+                    Who may in the running be left to breathe, <br>
+                    As the circling race draws near to its close <br>
+                    And our men, reversing their way with foes, <br>
+                    Fly from each other along the track, <br>
+                    Who may for his running the prize bear back. <br>
+                    Our Bards will sing so the Dead may hear <br>
+                    In their green duns watching from year to year <br>
+                    The Summer come with its grasses tall <br>
+                    And, after a longer interval, <br>
+                    The sweet youth ripen to women and men <br>
+                    To love, to challenge, to glory; and then <br>
+                    The green earth laps them all and, all too soon, <br>
+                    They join the watchers within the dun. <br>
+                    We are come, O King, where the games are sped, <br>
+                    To share life’s crown with the still-foot Dead. </p>
+                
+                <p class="poem-heading">THE KING OF THE WEST</p>
+                
+                <p>
+                    Where I come from, King, the skies <br>
+                    Are less coloured than the land; <br>
+                    And the wildest winds that rise <br>
+                    In their clouds are moist and bland. <br>
+                    If you climbed a mountain peak <br>
+                    When the sun has just gone down, <br>
+                    Ant the sea’s without a break, <br>
+                    Heaven from sea could not be known. </p>
+                
+                <p>
+                    Islands shimmer after dark <br>
+                    Floating in forgotten gold, <br>
+                    Islands reached by no man’s barque, <br>
+                    Islands poets’ eyes behold. <br>
+                    And I bring my bards to try <br>
+                    Who may conquer in the course <br>
+                    Where the wing’s too slow to fly, <br>
+                    Where none may prevail by force. </p>
+                
+                <p class="poem-heading">THE SONG OF THE BARDS</p>
+                
+                <p>
+                    Where should follow Sport but Song, <br>
+                    And the victor but renown? <br>
+                    Many men are brave and strong, <br>
+                    But if Courage strive unknown <br>
+                    And no poet make it sweet <br>
+                    With the words that rouse the deed, <br>
+                    Even better were defeat: <br>
+                    Who will men forgotten heed? </p>
+                
+                <p>
+                    We can drive a host that wars <br>
+                    With the long embattled years: <br>
+                    Time gives ground when in the cars <br>
+                    Poets are the charioteers. <br>
+                    Beauty vanishing like Spring <br>
+                    We can rescue and respite, <br>
+                    Raise her from Earth’s shadowing <br>
+                    Up into perennial light. <br>
+                    We can walk the reddened path <br>
+                    In the slippery wake of Conn, <br>
+                    Rouse the Hundred-Battled wrath, <br>
+                    Bid him stay or tarre him on. <br>
+                    We can tell of Queenly joy <br>
+                    Underneath the trysting thorn, <br>
+                    And the anger of McRoy <br>
+                    When the wooden sword was worn. </p>
+                
+                <p>
+                    We can sing the noble horse <br>
+                    And the wonder of his race, <br>
+                    Showing how the supernal Force <br>
+                    Turns to Courage, Speed and Grace: <br>
+                    For he sprang from soil and surf <br>
+                    Where the ocean weds the loam; <br>
+                    And he thunders on the turf, <br>
+                    And his speed gives back the foam. </p>
+                
+                <p>
+                    While we hold the Shield of song <br>
+                    Stands the lineage of Kings; <br>
+                    And our buckler against wrong <br>
+                    Louder than MacNessa’s rings. <br>
+                    Loveliness we can renew <br>
+                    Unrestricted by it’s date, <br>
+                    And the brace man’s death undo. <br>
+                    We can bend the neck of Fate. </p>
+                
+                <p>
+                    Now from prairie, hill and bush <br>
+                    Which gigantic rivers drain, <br>
+                    Streams whose single-handed rush, <br>
+                    Like a Chief’s, puts back the main, <br>
+                    Comes the old heroic race, <br>
+                    Men whose names are with us still, <br>
+                    And we hail them face to face <br>
+                    In the Games of Strength and skill. </p>
+                
+                <p class="poem-heading">ODES AND ADDRESSES</p>
+                
+                <p>
+                    Where the blue eye beams with light, <br>
+                    Where there is the open hand, <br>
+                    Where the mood is dark and bright <br>
+                    There is also Ireland. <br>
+                    Welcome, Brothers, and well met <br>
+                    In the land that bids you hail: <br>
+                    Far apart though we be set, <br>
+                    Gael does not forget the Gael. </p>
+                
+                <p class="poem-heading">TO THE MOON</p>
+                
+                <p>
+                    O born before our birth began! <br>
+                    Through all your blanched and listening vales, <br>
+                    Far from the echoing shores of man, <br>
+                    Aloof, may sing- what nightingales! </p>
+                
+                <p class="poem-heading">TO THE FIXED STARS</p>
+                
+                <p>
+                    Gazers at Earth who may not snatch <br>
+                    A moment’s rest, O Sentinels, <br>
+                    Who watch with none to change the watch, <br>
+                    Is there a Rumour which fortells, </p>
+                
+                <p>
+                    After long vigilance, relief; <br>
+                    And timeless ease from ageless hours; <br>
+                    A respite from the blaze of Life, <br>
+                    Deep in a shelter such as ours, </p>
+                
+                <p>
+                    Where you may bathe your eyes in Night, <br>
+                    Trusting in Death’s; long “All is well”? <br>
+                    Ah, no! For what can give respite, <br>
+                    And quench the light perpetual? </p>
+                
+                <p>
+                    Our very shade which seems to rest, <br>
+                    Spins at the apex of its cone; <br>
+                    The dark in which the stars shine best, <br>
+                    Is by some solar radiance thrown. </p>
+                
+                <p>
+                    Even the primordial Dark that once <br>
+                    Engendered light, nor growth debars, <br>
+                    Is phosphorescent with dead suns, <br>
+                    And pregnant with the dust of stars. </p>
+                
+                <p class="poem-heading">VIRGIL</p>
+                
+                <p>
+                    From Mantua’s meadows to Imperial Rome <br>
+                    Came Virgil, with the wood-light in his eyes, <br>
+                    Browned by the suns that round his hillside home <br>
+                    Burned on the chestnuts and the ilices. <br>
+                    And these he left, and left the fallows where <br>
+                    The slow streams freshened many a bank of thyme, <br>
+                    To found a city in the Roman air, <br>
+                    And build the epic turrets in a rhyme. <br>
+                    But were the woodland deities forgot, <br>
+                    Pan, Sylvan, and the sister nymphs for whom <br>
+                    He poured his melody the fields along? <br>
+                    They gave him for his faith a happy lot: <br>
+                    The waving of the meadows in his song <br>
+                    And the spontaneous laurel at his tomb. </p>
+
+
+                <p class="poem-attribution">Oliver St. John Gogarty, 1924</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Modal functionality
         const liffeySwimModal = document.getElementById('liffeySwimModal');
         const liffeySwimEntry = document.getElementById('liffeySwimEntry');
         const meathHuntModal = document.getElementById('meathHuntModal');
         const meathHuntEntry = document.getElementById('meathHuntEntry');
+        const tailteannOdeModal = document.getElementById('tailteannOdeModal');
+        const tailteannOdeEntry = document.getElementById('tailteannOdeEntry');
         const closeBtns = document.querySelectorAll('.modal-close');
 
         // Open modal when clicking on the Liffey Swim entry
@@ -593,20 +948,28 @@
             document.body.style.overflow = 'hidden'; // Prevent scrolling
         });
 
+        // Open modal when clicking on the Tailteann Ode entry
+        tailteannOdeEntry.addEventListener('click', function() {
+            tailteannOdeModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+
         // Close modal when clicking the X buttons
         closeBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 liffeySwimModal.style.display = 'none';
                 meathHuntModal.style.display = 'none';
+                tailteannOdeModal.style.display = 'none';
                 document.body.style.overflow = 'auto'; // Re-enable scrolling
             });
         });
 
         // Close modal when clicking outside of it
         window.addEventListener('click', function(event) {
-            if (event.target === liffeySwimModal || event.target === meathHuntModal) {
+            if (event.target === liffeySwimModal || event.target === meathHuntModal || event.target === tailteannOdeModal) {
                 liffeySwimModal.style.display = 'none';
                 meathHuntModal.style.display = 'none';
+                tailteannOdeModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         });
@@ -616,6 +979,7 @@
             if (event.key === 'Escape') {
                 liffeySwimModal.style.display = 'none';
                 meathHuntModal.style.display = 'none';
+                tailteannOdeModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         });
