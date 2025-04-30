@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.95, maximum-scale=5.0, user-scalable=yes">
-    <title>Cork 2068</title>
+    <title>Cork 2068 · XLIVth Olympic Games</title>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -243,13 +243,21 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            /* gap: 12px; */
             column-gap: 12px;
             margin-bottom: 0.5rem;
         }
 
         .medal-art-medal {
             white-space: nowrap;
+        }
+
+        .artwork-entry {
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .artwork-entry:hover {
+            color: #9ef5a3;
         }
 
         @media (max-width: 500px) {
@@ -364,7 +372,7 @@
         <div class="container">
             <p>Coinciding with the 25<sup>th</sup> anniversary of a unified Ireland, celebrating two decades of being the wealthiest country per capita, and with guaranteed sunshine—this is sure to be a sight to behold.</p>
             <p>The Olympic torch will be lit by Greco-Hibernian, <em>Proinsias Thehedofia</em>.
-               His father from Athens, and mother from Fermanagh—neither hurling strongholds—he's got a lineage tracing back to the ancient games and will be representing Ireland again in boxing, one of the original Olympic sports.
+               His father from Athens, and mother from Fermanagh—neither hurling strongholds—he’s got a lineage tracing back to the ancient games and will be vying for another Irish gold in the boxing, one of the oldest Olympic sports.
             </p>
         </div>
 
@@ -456,23 +464,23 @@
                     
                     <div class="medals">
                         <em class="previous-medals">previous medals</em>
-                        <div class="medal-art">
+                        <div class="medal-art artwork-entry" id="meathHuntEntry">
                             <div class="medal-art-medal">
                                 <span class="medal" id="p2">🥉</span> <strong>1948</strong>
                             </div>
                             <div class="medal-art-title">
-                                <em>"Meath Hunt Point-to-Point Races"</em>
+                                <em>“Meath Hunt Point-to-Point Races”</em>
                             </div>
                             <div class="medal-art-artist">
                                 Letitia Marion Hamilton
                             </div>
                         </div>
-                        <div class="medal-art">
-                            <div class="medal-art-medal artwork-clickable" id="liffeySwimMedal">
+                        <div class="medal-art artwork-entry" id="liffeySwimEntry">
+                            <div class="medal-art-medal">
                             <span class="medal" id="p1">🥈</span> <strong>1924</strong>
                             </div>
-                            <div class="medal-art-title artwork-clickable" id="liffeySwimEntry">
-                            <em>"The Liffey Swim"</em>
+                            <div class="medal-art-title">
+                            <em>“The Liffey Swim”</em>
                             </div>
                             <div class="medal-art-artist">
                             Jack B. Yeats 
@@ -480,9 +488,7 @@
                         </div>
                        
                     </div>
-<!--                     <div>
-                    <img src="Liffey Swim Yeats.jpg" width="300px">
-                    </div> -->
+
                 </div>
                 <div class="sport">
                     <!-- <h2>Literature <span class="medal">🥉</span></h2> -->
@@ -494,7 +500,7 @@
                             <span class="medal" id="l1">🥉</span> <strong>1924</strong>
                             </div>
                             <div class="medal-art-title">
-                            <em>"Tailteann Ode"</em>
+                            <em>“Tailteann Ode”</em>
                             </div>
                             <div class="medal-art-artist">
                             Oliver St. John Gogarty
@@ -532,12 +538,13 @@
                     <a href="https://besmirch.clothing/products/cork-2068-t-shirt"><img src="tshirt.jpg" width="100%" class="merch"></a>
                 </div>
             </div>
+            <a href="https://besmirch.clothing/collections/cork-2068"><em>browse all merch</em></a>
 
             <div class="separator">Getting to the Games</div>
             <div class="container">
                 <p class="getting-to-games">With hourly landings at <strong>Donegal space port</strong>, you can then take a <strong>silent autonomous flying car</strong> down the scenic west coast, directly to your apartment room.</p>
-                <p class="getting-to-games">There are also plenty of <strong>supersonic flights</strong> with similar flying car services from any of Ireland's 53 airports.</p>
-                <p class="getting-to-games">Cork's new <strong>hydrofoil</strong> port is also a great option for anyone coming from places like the Extended Sovereign Azores.</p>
+                <p class="getting-to-games">There are also plenty of <strong>supersonic flights</strong> with similar flying car services from any of Ireland’s 53 airports.</p>
+                <p class="getting-to-games">Cork’s new <strong>hydrofoil</strong> port is also a great option for anyone coming from places like the Extended Sovereign Azores.</p>
             </div>
 
             <div class="separator">Keep up to date with Cork 2068</div>
@@ -554,47 +561,61 @@
     <div id="liffeySwimModal" class="modal">
         <span class="modal-close">&times;</span>
         <div class="modal-content">
-            <img src="Liffey Swim Yeats.jpg" alt="The Liffey Swim by Jack B. Yeats">
+            <img src="liffey_swim_yeats.jpg" alt="The Liffey Swim by Jack B. Yeats">
+        </div>
+    </div>
+
+    <!-- Modal for Meath Hunt -->
+    <div id="meathHuntModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <img src="meath_hunt_hamilton.jpg" alt="Meath Hunt Point-to-Point Races by Letitia Marion Hamilton">
         </div>
     </div>
 
     <script>
         // Modal functionality
-        const modal = document.getElementById('liffeySwimModal');
+        const liffeySwimModal = document.getElementById('liffeySwimModal');
         const liffeySwimEntry = document.getElementById('liffeySwimEntry');
-        const liffeySwimMedal = document.getElementById('liffeySwimMedal');
-        const closeBtn = document.querySelector('.modal-close');
+        const meathHuntModal = document.getElementById('meathHuntModal');
+        const meathHuntEntry = document.getElementById('meathHuntEntry');
+        const closeBtns = document.querySelectorAll('.modal-close');
 
-        // Open modal when clicking on the entry
+        // Open modal when clicking on the Liffey Swim entry
         liffeySwimEntry.addEventListener('click', function() {
-            modal.style.display = 'flex';
+            liffeySwimModal.style.display = 'flex';
             document.body.style.overflow = 'hidden'; // Prevent scrolling
         });
 
-        // Open modal when clicking on the medal
-        liffeySwimMedal.addEventListener('click', function() {
-            modal.style.display = 'flex';
+        // Open modal when clicking on the Meath Hunt entry
+        meathHuntEntry.addEventListener('click', function() {
+            meathHuntModal.style.display = 'flex';
             document.body.style.overflow = 'hidden'; // Prevent scrolling
         });
 
-        // Close modal when clicking the X
-        closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        // Close modal when clicking the X buttons
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                liffeySwimModal.style.display = 'none';
+                meathHuntModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            });
         });
 
         // Close modal when clicking outside of it
         window.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
+            if (event.target === liffeySwimModal || event.target === meathHuntModal) {
+                liffeySwimModal.style.display = 'none';
+                meathHuntModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         });
 
         // Close on ESC key
         window.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && modal.style.display === 'flex') {
-                modal.style.display = 'none';
+            if (event.key === 'Escape') {
+                liffeySwimModal.style.display = 'none';
+                meathHuntModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         });
